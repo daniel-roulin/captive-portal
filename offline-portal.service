@@ -1,0 +1,12 @@
+[Unit]
+Description=Offline Captive Portal Server
+After=network-online.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/eel-capo/webserver-offline/server.py
+WorkingDirectory=/home/pi/eel-capo/webserver-offline
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
